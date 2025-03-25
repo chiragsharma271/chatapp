@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { auth, provider } from "../firebase";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import { db } from "../firebase"; // Import Firestore instance
+import { db } from "../firebase"; 
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -37,10 +37,8 @@ export const AuthProvider = ({ children }) => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
   
-      // ✅ Set displayName in Firebase Auth
       await updateProfile(user, { displayName: username });
   
-      // ✅ Store user in Firestore under "users" collection
       await setDoc(doc(db, "users", user.uid), {
         uid: user.uid,
         email: user.email,

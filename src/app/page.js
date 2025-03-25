@@ -34,7 +34,6 @@ const Login = () => {
       try {
         const newUser = await registerWithEmail.mutateAsync({ email, password, username });
 
-        // ✅ Store username in Firestore under 'users' collection
         await setDoc(doc(db, "users", newUser.uid), {
           displayName: username,
           email: newUser.email,

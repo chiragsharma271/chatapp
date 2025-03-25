@@ -35,7 +35,7 @@ const Chat = () => {
 
     const showAlert = (message, type = "error") => {
         setAlert({ message, type });
-        setTimeout(() => setAlert(null), 3000); // Auto-hide alert after 3 seconds
+        setTimeout(() => setAlert(null), 3000); 
     };
 
     const sendMessage = async (e) => {
@@ -48,7 +48,7 @@ const Chat = () => {
 
         if (!user || !user.uid) {
             showAlert("You are not logged in! Redirecting to login...", "warning");
-            setTimeout(() => router.push("/login"), 3000); // Redirect to login page after 3 sec
+            setTimeout(() => router.push("/login"), 3000); 
             return;
         }
 

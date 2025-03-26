@@ -35,7 +35,7 @@ const Chat = () => {
 
     const showAlert = (message, type = "error") => {
         setAlert({ message, type });
-        setTimeout(() => setAlert(null), 3000); 
+        setTimeout(() => setAlert(null), 3000);
     };
 
     const sendMessage = async (e) => {
